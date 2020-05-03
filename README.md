@@ -11,7 +11,8 @@ However, if other apps installed on a user's device can handle the same intent, 
 ### Add intent filters for incoming links
 To create a link to your app content, add an intent filter that contains these elements and attribute values in your manifest:
 
-```<intent-filter>
+```xml
+<intent-filter>
   ...
   <action android:name="android.intent.action.VIEW" />
   <category android:name="android.intent.category.DEFAULT" />
@@ -28,7 +29,8 @@ Also include the ```DEFAULT``` category. This allows your app to respond to impl
 
 
 ### Read data from incoming intents
-```override fun onResume() {
+```kotlin
+override fun onResume() {
         super.onResume()
         val `in` = intent        //Keywords can be user as variables in kotlin using symbol (`)
         val data: Uri? = `in`.data
